@@ -4,7 +4,6 @@ import AdminEditButton from './AdminEditButton';
 import { InlineMedia, MediaGallery, SectionBackground } from './MediaBlock';
 import { normalizeMediaUrl } from '../utils/mediaUrl';
 import ScrollLink from './ScrollLink';
-import fallbackPortrait from '../assets/sasidhar-valluru.jpg';
 
 function getScrollMotion(section) {
   if (section.type === 'hero' || section.type === 'page-hero') return 'hero';
@@ -192,25 +191,19 @@ const heroExpertiseCards = [
   { title: 'Enterprise Workflows', icon: 'EW' },
   { title: 'Delivery Governance', icon: 'DG' },
 ];
+const permanentPortrait = '/Sasi-final.jpeg';
 
-function HeroVisual({ section, className = '' }) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const imageUrl = normalizeMediaUrl(section.media?.url);
-  const imageSrc = imageFailed || !imageUrl ? fallbackPortrait : imageUrl;
-
+function HeroVisual({ className = '' }) {
   return (
     <div className={`hero-visual ${className}`}>
       <div className="executive-frame">
         <img
-          src={imageSrc}
-          alt={section.media.alt || section.title || ''}
+          src={permanentPortrait}
+          alt="Sasidhar Valluru"
           className="executive-portrait mx-auto"
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          onError={() => {
-            if (imageSrc !== fallbackPortrait) setImageFailed(true);
-          }}
         />
         <div className="expertise-stack" aria-label="Professional expertise">
           {heroExpertiseCards.map((item, idx) => (
@@ -283,7 +276,7 @@ function Hero({ section, pageKey }) {
             </div>
           )}
 
-          <HeroVisual section={section} className="lg:hidden" />
+          <HeroVisual className="lg:hidden" />
 
           <div className="hero-actions">
             {section.primaryCta && (
@@ -310,7 +303,7 @@ function Hero({ section, pageKey }) {
           </div>
         </div>
 
-        <HeroVisual section={section} className="hidden lg:flex lg:order-2" />
+        <HeroVisual className="hidden lg:flex lg:order-2" />
       </div>
     </SectionShell>
   );

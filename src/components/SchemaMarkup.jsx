@@ -56,7 +56,7 @@ export default function SchemaMarkup() {
     '@id': `${SITE_URL}/#person`,
     name: PERSON_NAME,
     url: SITE_URL,
-    image: `${SITE_URL}/pic1.jpeg`,
+    image: `${SITE_URL}/Sasi-final.jpeg`,
     jobTitle: 'Investor, Operator & AI Architect',
     description:
       'Sasidhar Valluru is an investor, operator, and AI architect who builds, backs, and scales companies at the intersection of applied AI, product architecture, delivery governance, and India execution.',

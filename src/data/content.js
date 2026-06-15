@@ -12,7 +12,7 @@ const withHeroMedia = (section) => ({
 });
 
 export const defaultSiteContent = {
-  _version: 10,
+  _version: 11,
   brand: {
     siteName: 'TheValluru.com',
     personName: 'Sasidhar Valluru',
@@ -42,7 +42,7 @@ export const defaultSiteContent = {
           body: 'I build, back, and scale companies where technology has to survive real operating conditions. My work sits where applied AI, product architecture, operating-model design, India execution, enterprise workflows, and delivery governance have to become one working system.',
           supporting: 'Build. Back. Scale. Govern. The work is not only to imagine the future. The work is to build the operating spine that can carry it.',
           primaryCta: { label: 'Start a Working Conversation', href: '/contact#contact-form' },
-          media: { type: 'image', url: '/pic1.jpeg', alt: 'Sasidhar Valluru professional portrait' },
+          media: { type: 'image', url: '/Sasi-final.jpeg', alt: 'Sasidhar Valluru' },
         }),
         {
           id: 'home-proof-strip',

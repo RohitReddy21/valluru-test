@@ -1,9 +1,28 @@
 const publicAssetPattern = /\.(avif|gif|jpe?g|mp4|ogg|png|svg|webm|webp)$/i;
 const cloudStoragePattern = /^https?:\/\/(cdn\.)?(supabase|cloudinary|amazonaws|cdn)/i;
+const blockedMediaFilenames = new Set([
+  'pic1.jpeg',
+  'sasidhar-valluru.jpg',
+  'sasi1.jpeg',
+  'whatsapp image 2026-06-15 at 2.54.38 pm.jpeg',
+]);
+
+function getMediaFilename(value) {
+  const normalized = String(value || '').trim().replace(/\\/g, '/');
+  if (!normalized) return '';
+
+  try {
+    const pathname = new URL(normalized, 'https://example.com').pathname;
+    return decodeURIComponent(pathname).split('/').pop().toLowerCase();
+  } catch {
+    return normalized.split('?')[0].split('#')[0].split('/').pop().toLowerCase();
+  }
+}
 
 export function normalizeMediaUrl(value) {
   const url = String(value || '').trim();
   if (!url) return '';
+  if (blockedMediaFilenames.has(getMediaFilename(url))) return '';
 
   // Allow data URLs, blobs, and cloud storage URLs
   if (/^(data:|blob:)/i.test(url)) {

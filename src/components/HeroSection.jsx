@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import ScrollLink from './ScrollLink';
+
+const permanentPortrait = '/Sasi-final.jpeg';
 
 function renderCta(cta, className) {
   if (!cta) return null;
@@ -14,8 +15,6 @@ function renderCta(cta, className) {
 }
 
 export default function HeroSection({ section }) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const showImage = section.media?.url && !imageFailed;
   const proofPoints = ['Build', 'Back', 'Scale', 'Govern'];
   const backgroundVideo = section.backgroundVideo || '/hero-background.mp4';
 
@@ -59,24 +58,15 @@ export default function HeroSection({ section }) {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          {showImage ? (
-            <div className="w-[min(80vw,20rem)] h-[min(80vw,20rem)] sm:w-[min(90vw,28rem)] sm:h-[min(90vw,28rem)] lg:w-[30rem] lg:h-[30rem] overflow-hidden rounded-full">
-              <img
-                src="./src/assets/Movement 3.png"
-                alt={section.media.alt || section.title}
-                onError={() => setImageFailed(true)}
-                className="h-full w-full object-cover rounded-full"
-              />
-            </div>
-          ) : (
-            <div className="flex w-[min(90vw,28rem)] h-[min(90vw,28rem)] flex-col items-center justify-center rounded-full border border-[var(--gold)]/30 bg-transparent p-4 sm:p-6 lg:p-8 text-center lg:w-[30rem] lg:h-[30rem]">
-              <div className="mb-5 h-24 w-24 rounded-lg bg-transparent"></div>
-              <p className="text-lg font-bold text-[var(--deep-navy)]">Your image goes here</p>
-              <p className="mt-2 max-w-sm text-sm leading-relaxed text-[var(--warm-white)]">
-                Save your portrait as public/sasidhar-valluru.jpg.
-              </p>
-            </div>
-          )}
+          <div className="executive-frame w-[min(90vw,28rem)] lg:w-[30rem]">
+            <img
+              src={permanentPortrait}
+              alt="Sasidhar Valluru"
+              className="executive-portrait mx-auto"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </section>

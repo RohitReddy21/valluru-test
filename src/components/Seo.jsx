@@ -76,8 +76,8 @@ export default function Seo() {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content="899" />
+      <meta property="og:image:height" content="899" />
       <meta property="og:image:alt" content="Sasidhar Valluru — Investor, Operator, AI Architect" />
       <meta property="og:locale" content="en_US" />
 

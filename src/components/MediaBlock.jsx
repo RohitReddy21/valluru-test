@@ -51,6 +51,7 @@ export function InlineMedia({ item, className = '', loading = 'lazy', fetchPrior
   }
 
   const url = normalizeMediaUrl(item.url);
+  if (!url) return null;
 
   if (item.type === 'video' || isVideo(url)) {
     return (
@@ -73,7 +74,7 @@ export function InlineMedia({ item, className = '', loading = 'lazy', fetchPrior
 }
 
 export function MediaGallery({ items }) {
-  const visibleItems = (items || []).filter((item) => !item.hidden);
+  const visibleItems = (items || []).filter((item) => !item.hidden && (item.icon || normalizeMediaUrl(item.url)));
   if (!visibleItems.length) return null;
 
   return (

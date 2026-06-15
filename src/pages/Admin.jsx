@@ -938,7 +938,7 @@ function HeroBackgrounds({ pages, onUpdateSection }) {
     <div className="rounded-xl border border-[var(--surface-grey)] bg-white p-6 shadow-lg shadow-slate-900/10">
       <h2 className="text-2xl font-bold text-[var(--deep-navy)]">Hero Media</h2>
       <p className="mt-2 text-sm text-[var(--muted-blue)]">
-        Set hero background media for every page from one place. For the home hero portrait, paste an image URL or upload from your device.
+        Set hero background media for every page from one place. The home portrait is fixed to /Sasi-final.jpeg.
       </p>
       <div className="mt-5 grid gap-4">
         {heroSections.map(({ pageKey, pageTitle, section }) => (
@@ -1377,7 +1377,7 @@ export default function Admin() {
                   <div className="rounded-xl border border-[var(--surface-grey)] bg-white p-5 shadow-sm shadow-slate-900/10">
                     <h3 className="text-lg font-bold text-[var(--deep-navy)]">Hero media for {content.pages[activePage]?.title}</h3>
                     <p className="mt-2 text-sm text-[var(--muted-blue)]">
-                      Paste hosted media URLs, reference files from public, or upload the home hero portrait from your device.
+                      Paste hosted media URLs or reference files from public. The home portrait is fixed to /Sasi-final.jpeg.
                     </p>
                     <div className="mt-5 grid gap-5">
                       {heroSections.map((section) => (
