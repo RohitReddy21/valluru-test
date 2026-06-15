@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--mid-navy)] bg-[var(--deep-navy)] py-14 text-white">
       <div className="container-custom">
-        <div className="mb-8 grid gap-8 md:grid-cols-3">
+        <div className="flex justify-between gap-15 md:gap-24 flex-wrap mb-12">
           <div>
             <h3 className="mb-4 text-lg font-bold text-white">{brand.siteName}</h3>
             <p className="max-w-sm leading-7 text-[var(--warm-white)]">{brand.tagline}</p>
@@ -20,6 +20,8 @@ export default function Footer() {
               <li><Link to="/" className="transition hover:text-[var(--gold)]">Home</Link></li>
               <li><Link to="/about" className="transition hover:text-[var(--gold)]">About</Link></li>
               <li><Link to="/advisory" className="transition hover:text-[var(--gold)]">Advisory</Link></li>
+              <li><Link to="/contact#contact-form" className="transition hover:text-[var(--gold)]">Contact</Link></li>
+
             </ul>
           </div>
 
@@ -31,7 +33,6 @@ export default function Footer() {
               <li><a href="https://www.globenewswire.com/news-release/2025/04/15/3062117/0/en/Healthcare-Integrated-Technologies-Inc-Appoints-Sasidhar-Valluru-as-Director-of-Global-Product-Delivery.html" target="_blank" rel="noreferrer" className="transition hover:text-[var(--gold)]">HITC Appointment Announcement</a></li>
               <li><a href="https://www.prismicreflections.com/about-us" target="_blank" rel="noreferrer" className="transition hover:text-[var(--gold)]">Prismic Reflections - Product / Design Collaboration Quote</a></li>
               <li><a href={brand.inwardFireUrl} target="_blank" rel="noreferrer" className="transition hover:text-[var(--gold)]">TheValluru.org / The Human Side</a></li>
-              <li><Link to="/contact#contact-form" className="transition hover:text-[var(--gold)]">Contact</Link></li>
             </ul>
           </div>
         </div>
